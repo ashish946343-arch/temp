@@ -91,3 +91,4 @@ public/images/      procedurally generated demo satellite imagery
   CARTO tiles; markers, popups, search, and analysis all work even if
   tiles fail to load.
 "# temp" 
+"# temp" 
