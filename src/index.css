@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --color-void: #0a0d12;
+  --color-surface: #11151c;
+  --color-surface-raised: #161c25;
+  --color-surface-hover: #1b222c;
+  --color-hairline: #232a35;
+  --color-hairline-strong: #313a47;
+
+  --color-ink: #e7ecf2;
+  --color-ink-dim: #8a97a5;
+  --color-ink-faint: #566172;
+
+  --color-amber: #e5a94b;
+  --color-amber-dim: #a67a37;
+  --color-cyan: #5fa8d3;
+  --color-cyan-dim: #3d6c88;
+
+  --color-status-high: #4ade80;
+  --color-status-med: #fbbf24;
+  --color-status-low: #f87171;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Leaflet dark theming */
+.leaflet-container {
+  background: #0d1117;
+  font-family: var(--font-sans);
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 13, 18, 0.75) !important;
+  color: var(--color-ink-faint) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--color-ink-dim) !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: var(--color-surface) !important;
+  color: var(--color-ink) !important;
+  border-color: var(--color-hairline) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: var(--color-surface-hover) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--color-surface-raised);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-popup-tip {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-hairline-strong);
+}
+
+.leaflet-popup-content {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin: 8px 10px;
+}
+
+/* thin scrollbars for the technical, compact feel */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-hairline-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-hairline-strong);
+  border-radius: 3px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-line {
+  animation: scan 1.6s linear infinite;
+}
